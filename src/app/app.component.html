@@ -23,82 +23,106 @@
             </div>
 
 
-        <form class="">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="your-name">
-                        Your Name
-                    </label>
-                    <input class="form-control" id="your-name" type="text" value="Mavin Dee" />
+            <form class="" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">
+                            Your Name
+                        </label>
+                        <input class="form-control" id="name" type="text" formControlName="name" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="username">
+                            User Name
+                        </label>
+                        <input class="form-control" id="username" type="text" formControlName="username" required />
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="user-name">
-                        User Name
-                    </label>
-                    <input class="form-control" id="user-name" type="text" value="Mavindee" />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input class="form-control" id="email" type="email" value="mavindee@gmail.com"
+                            formControlName="email" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">
+                            Password
+                        </label>
+                        <input class="form-control" id="password" type="password" value="********"
+                            formControlName="password" required />
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">
-                        Email
-                    </label>
-                    <input class="form-control" id="email" type="email" value="mavindee@gmail.com" />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dateofbirth">
+                            Date of Birth
+                        </label>
+                        <input class="form-control" id="dateofbirth" type="text" value="20 January 1995" formControlName="dateofbirth"
+                            required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="presentaddress">
+                            Present Address
+                        </label>
+                        <input class="form-control" id="presentaddress" type="text" value="No, 20 ado, mararaba"
+                            formControlName="presentaddress" required />
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="password">
-                        Password
-                    </label>
-                    <input class="form-control" id="password" type="password" value="********" />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="permanentaddress">
+                            Permanent Address
+                        </label>
+                        <input class="form-control" id="permanentaddress" type="text" value="No, 20 ado, mararaba"
+                            formControlName="permanentaddress" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="city">
+                            City
+                        </label>
+                        <input class="form-control" id="city" type="text" value="Abuja" formControlName="city"
+                            required />
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="dob">
-                        Date of Birth
-                    </label>
-                    <input class="form-control" id="dob" type="text" value="20 January 1995" />
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="present-address">
-                        Present Address
-                    </label>
-                    <input class="form-control" id="present-address" type="text" value="No, 20 ado, mararaba" />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="permanent-address">
-                        Permanent Address
-                    </label>
-                    <input class="form-control" id="permanent-address" type="text" value="No, 20 ado, mararaba" />
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="city">
-                        City
-                    </label>
-                    <input class="form-control" id="city" type="text" value="Abuja" />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="postal-code">
-                        Postal Code
-                    </label>
-                    <input class="form-control" id="postal-code" type="text" value="345689" />
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="country">
-                        Country
-                    </label>
-                    <input class="form-control" id="country" type="text" value="Nigeria" />
-                </div>
-            </div><br /><br />
-            <button class="btn btn-save" type="submit">
-                Save
-            </button>
-        </form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="postalCode">
+                            Postal Code
+                        </label>
+                        <input class="form-control" id="postalCode" type="text" value="345689"
+                            formControlName="postalCode" required />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="country">
+                            Country
+                        </label>
+                        <input class="form-control" id="country" type="text" value="Nigeria" formControlName="country"
+                            required />
+                    </div>
+                </div><br /><br />
+                <button class="btn btn-save" type="submit">
+                    Save
+                </button>
+            </form>
 
+        </div>
+
+        <h2>Stored Data</h2>
+        <div *ngIf="storedData">
+            <p><strong>Name:</strong> {{ storedData.name }}</p>
+            <p><strong>Email:</strong> {{ storedData.email }}</p>
+            <p><strong>Username:</strong> {{ storedData.username }}</p>
+            <p><strong>Password:</strong> {{ storedData.password }}</p>
+            <p><strong>Dateofbirth:</strong> {{ storedData.dateofbirth }}</p>
+            <p><strong>Presentaddress:</strong> {{ storedData.presentaddress }}</p>
+            <p><strong>Permanentaddress:</strong> {{ storedData.permanentaddress }}</p>
+            
+            <p><strong>Postalcode:</strong> {{ storedData.postalCode }}</p>
+            <p><strong>Country:</strong> {{ storedData.country }}</p>
+            <p><strong>City:</strong> {{ storedData.city }}</p>
+            <button (click)="onEdit()">Edit</button>
         </div>
 
     </div>

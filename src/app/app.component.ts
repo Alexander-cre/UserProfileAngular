@@ -13,16 +13,16 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      Name: [''],
-      Username: [''],
-      Password: [''] ,
-      Email: [''] ,
-      PresentAddress: [''] ,
-      DateoFBirth: [''] ,
-      PermanentAddress: [''] ,
-      City: [''] ,
-      Country : [''],
-      PostalCode : [''],
+      name: [''],
+      username: [''],
+      password: [''] ,
+      email: [''] ,
+      presentaddress: [''] ,
+      dateofbirth: [''] ,
+      permanentaddress: [''] ,
+      city: [''] ,
+      country : [''],
+      postalCode : [''],
     });
   }
 
@@ -47,5 +47,5 @@ export class AppComponent {
   onEdit() {
     this.storedData = this.myForm.value; // Update stored data with current form values
   }
-  
+
 }
