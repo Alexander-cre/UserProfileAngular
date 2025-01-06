@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
